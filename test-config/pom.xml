@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-  	<artifactId>test-model</artifactId>
-	<name>Test Full Stack Model</name>
+  	<artifactId>test-config</artifactId>
+	<name>Test Full Stack Config</name>
 	
 	<parent>
 		<groupId>com.test</groupId>
@@ -11,7 +11,13 @@
 	</parent>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>2.6.1</version>
+		</dependency>
 
 	</dependencies>
-	
+
 </project>
