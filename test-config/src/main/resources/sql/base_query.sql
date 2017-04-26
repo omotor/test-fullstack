@@ -1,7 +1,8 @@
+DROP DATABASE full_stack_test;
 CREATE DATABASE full_stack_test;
 
 CREATE TABLE user(
-	id bigint PRIMARY KEY,
+	id bigint PRIMARY KEY auto_increment,
     name VARCHAR(100),
     email VARCHAR(200),
     phone VARCHAR(200),

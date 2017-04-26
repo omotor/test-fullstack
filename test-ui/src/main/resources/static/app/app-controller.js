@@ -12,14 +12,6 @@ angular.module('test').controller('AppController', ['$scope', '$state','UserServ
         }
         loadUsers();
 
-        var saveUser = function (user) {
-            UserService.saveUser(user).success(function (data) {
-                $scope.message = "User Saved!";
-            }).error(function (data,status) {
-                $scope.message = "Error occurred " + data;
-            });
-        }
-
 	}
 
 ]);
