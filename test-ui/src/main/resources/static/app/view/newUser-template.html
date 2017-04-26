@@ -29,5 +29,8 @@
     <div ng-show="contatoForm.telefone.$error.pattern" class="alert alert-danger">
         O campo telefone deve ter o formato DDDDD-DDDD.
     </div>
+    <div ng-show="invalidEmail" class="alert alert-danger">
+        O e-mail não é válido
+    </div>
     <button class="btn btn-primary btn-block" ng-click="saveUser(user)" ng-disabled="userForm.$invalid">Adicionar Usuario</button>
 </div>

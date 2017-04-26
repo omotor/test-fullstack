@@ -1,6 +1,8 @@
 package com.test.model.api.model;
 
 
+import com.test.model.api.validation.Email;
+
 import javax.persistence.*;
 
 
@@ -17,7 +19,7 @@ public class User {
 
     private String name;
 
-    //TODO validate email
+    @Email
     @Column(nullable = false)
     private String email;
 

@@ -2,6 +2,8 @@ package com.test.api.endpoint;
 
 import com.test.api.status.StatusResource;
 import com.test.model.api.model.User;
+import com.test.model.api.response.StatusEnum;
+import com.test.model.api.response.StatusReponse;
 import com.test.repository.UserRepo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,13 +47,20 @@ public class UserEndpoint {
             value = "/user",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> createUser(@RequestBody User user)
+    public ResponseEntity<StatusReponse> createUser(@RequestBody User user)
     {
+        StatusReponse statusReponse = new StatusReponse();
         try {
             User newUser = userRepo.save(user);
-            return new ResponseEntity<User>(newUser,HttpStatus.CREATED);
+            statusReponse.setUser(user);
+            return new ResponseEntity<StatusReponse>(statusReponse,HttpStatus.CREATED);
         }catch (Exception e){
-            return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
+            if(e.getMessage().contains("email")){
+                statusReponse.setStatusEnum(StatusEnum.INVALID_EMAIL);
+                statusReponse.setSuccess(false);
+                return new ResponseEntity<StatusReponse>(statusReponse,HttpStatus.BAD_REQUEST);
+            }
+            return new ResponseEntity<StatusReponse>(HttpStatus.BAD_REQUEST);
         }
     }
 

@@ -4,6 +4,8 @@
  */
 package com.test.model.api.response;
 
+import com.test.model.api.model.User;
+
 import java.io.Serializable;
 
 /**
@@ -17,12 +19,32 @@ public class StatusReponse implements Serializable {
 	
 	private boolean success = true;
 
+	private StatusEnum statusEnum;
+
+	private User user = new User();
+
 	public boolean isSuccess() {
 		return success;
 	}
 
 	public void setSuccess(boolean success) {
 		this.success = success;
+	}
+
+	public StatusEnum getStatusEnum() {
+		return statusEnum;
+	}
+
+	public void setStatusEnum(StatusEnum statusEnum) {
+		this.statusEnum = statusEnum;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override
