@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('test').controller('AppController', ['$scope', '$state','UserService',
-	function ($scope, $state,UserService) {
+angular.module('test').controller('AppController', ['$scope', '$state','$location','UserService',
+	function ($scope, $state,$location,UserService) {
 
 		var loadUsers = function () {
             UserService.getUsers().success(function (data) {
@@ -19,6 +19,10 @@ angular.module('test').controller('AppController', ['$scope', '$state','UserServ
             }).error(function (data,status) {
                 $scope.message = "Error occurred " + data;
             });
+        }
+
+        $scope.updateUser = function (id) {
+            $location.path("/user/"+id);
         }
 
 	}

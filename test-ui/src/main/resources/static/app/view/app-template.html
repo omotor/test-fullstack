@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <div class="title">Listagem de usuarios</div>
+        <div class="title">Listagem de usuários</div>
     </div>
 </div>
 
@@ -21,7 +21,7 @@
             <td>{{user.phone}}</td>
             <td>{{user.gender}}</td>
             <td>
-                <button type="submit" class="btn btn-warning btn-xs" placeholder="U">U</button>
+                <button type="submit" class="btn btn-warning btn-xs" placeholder="U" ng-click="updateUser(user.id)">U</button>
                 <button type="submit" class="btn btn-danger btn-xs" placeholder="D" ng-click="deleteUser(user.id)">D</button>
             </td>
         </tr>
@@ -30,6 +30,6 @@
 
 <div class="row">
     <div class="col-lg-12 text-center">
-        <a href="#/newUser">Criar novo Usuário?</a>
+        <a href="#/user/add">Criar novo Usuário?</a>
     </div>
 </div>

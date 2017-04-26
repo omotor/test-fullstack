@@ -1,7 +1,8 @@
 <div class="jumbotron">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <div class="title">Novo Usuário</div>
+            <div class="title" ng-show="newUser">Novo Usuário</div>
+            <div class="title" ng-show="!newUser">Olá {{user.gender=='H' ? 'Sr.' : 'Sra.'}} {{user.name}}</div>
         </div>
     </div>
     <form name="userForm">
@@ -32,5 +33,8 @@
     <div ng-show="invalidEmail" class="alert alert-danger">
         O e-mail não é válido
     </div>
-    <button class="btn btn-primary btn-block" ng-click="saveUser(user)" ng-disabled="userForm.$invalid">Adicionar Usuario</button>
+    <button class="btn btn-primary btn-block" ng-click="saveUser(user)" ng-disabled="userForm.$invalid">{{newUser ? 'Adicionar Usuario' : 'Atualizar Usuario'}}</button>
+    <div class="col-lg-12 text-center">
+        <a href="#/">voltar</a>
+    </div>
 </div>

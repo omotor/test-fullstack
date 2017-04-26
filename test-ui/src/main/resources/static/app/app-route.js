@@ -9,14 +9,15 @@ angular.module('test').config(['$stateProvider', function ($stateProvider) {
 		controller: 'AppController'
 	})
     .state('newUser', {
-        url: '/newUser',
-        templateUrl: '/app/view/newUser-template.html',
-        controller: 'newUserController'
+        url: '/user/add',
+        templateUrl: '/app/view/createUpdateUser-template.html',
+        controller: 'newUserController',
+        params:{ newUser: true }
     })
 	.state('detailUser', {
-		url: '/user/:id',
-		templateUrl: '/app/view/detailUser-template.html',
-		controller: 'detailUserController'
+		url: '/user/:id?:newUser',
+		templateUrl: '/app/view/createUpdateUser-template.html',
+		controller: 'newUserController',
 	})
 	;
 
