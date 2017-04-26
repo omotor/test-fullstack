@@ -9,4 +9,5 @@ angular.module('test').config(['$stateProvider', function ($stateProvider) {
 		controller: 'AppController'
 	});
 
+
 }]);

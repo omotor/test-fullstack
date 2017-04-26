@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Timmana');
+
+.title{
+    font-size: 2em;
+    text-align: center;
+    font-family: Timmana;
+    margin: 1em 1em 1em 1em;
+}
