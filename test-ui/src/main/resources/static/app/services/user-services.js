@@ -21,11 +21,16 @@ angular.module('test').factory('UserService',
             return $http.post("/api/user",user);
         };
 
+        var _deleteUser = function (id) {
+            return $http.delete("/api/user/"+id);
+        };
+
         return {
             getUsers:_getUsers,
             saveUser:_saveUser,
             setUsers:_setUsers,
-            getUser:_getUser
+            getUser:_getUser,
+            deleteUser:_deleteUser
         };
     }
 

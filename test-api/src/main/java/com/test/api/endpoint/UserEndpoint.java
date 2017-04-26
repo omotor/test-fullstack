@@ -59,13 +59,27 @@ public class UserEndpoint {
             value = "/user/{id}",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<User> getItemsByCodeAndMarket(@PathVariable("id") long id)
+    public ResponseEntity<User> getUser(@PathVariable("id") long id)
     {
         User user = userRepo.findOne(id);
         if(user != null){
             return new ResponseEntity<User>(user, HttpStatus.OK);
         }else {
             return new ResponseEntity<User>(user, HttpStatus.NO_CONTENT);
+        }
+    }
+
+    @RequestMapping(
+            value = "/user/{id}",
+            method = RequestMethod.DELETE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> deleteUser(@PathVariable("id") long id)
+    {
+        try {
+            userRepo.delete(id);
+            return new ResponseEntity<User>(HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<User>(HttpStatus.BAD_REQUEST);
         }
     }
 }
