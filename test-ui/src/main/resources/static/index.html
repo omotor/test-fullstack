@@ -17,7 +17,9 @@
 
 <body>
 
-	<div ui-view></div>
+	<div class="container">
+		<div ui-view></div>
+	</div>
 
 	<script src="/vendors/jquery/jquery-3.1.1.min.js"></script>
 	<script src="/vendors/bootstrap/bootstrap.min.js"></script>
@@ -25,8 +27,16 @@
 	<script src="/vendors/angular/angular-ui-router.min.js"></script>
 
 	<script src="/app/app.js"></script>
-	<script src="/app/app-controller.js"></script>
+	<!--SERVICES-->
+	<script src="/app/services/user-services.js"></script>
+	<!--CONTROLLERS-->
+	<script src="/app/controllers/app-controller.js"></script>
+	<script src="/app/controllers/createUpdateUser-controller.js"></script>
+	<!--ROUTE-->
 	<script src="/app/app-route.js"></script>
+	<!--DIRECTIVE-->
+	<script src="/app/directives/uiAlert-directive.js"></script>
+	<script src="/app/directives/phone-directive.js"></script>
 
 </body>
 

@@ -1,0 +1,40 @@
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <div class="title" ng-show="newUser">Novo Usuário</div>
+            <div class="title" ng-show="!newUser">Olá {{user.gender=='H' ? 'Sr.' : 'Sra.'}} {{user.name}}</div>
+        </div>
+    </div>
+    <form name="userForm">
+        <input class="form-control" type="text" ng-model="user.name" name="nome" placeholder="Nome" ng-required="true"/>
+        <input class="form-control" type="text" ng-model="user.email" name="email" placeholder="E-mail" ng-required="true"/>
+        <input class="form-control" type="text" ng-model="user.phone" name="phone" id="phonenumber" placeholder="Telefone" ng-required="true" maxlength="10" ng-pattern="/^\d{4,5}-\d{4}$/" format-phone/>
+        <select class="form-control" ng-model="user.gender" ng-required="true">
+            <option value="">Selecione genero</option>
+            <option value="H">Homem</option>
+            <option value="M">Mulher</option>
+        </select>
+    </form>
+
+    <div ng-show="userForm.name.$dirty" ng-messages="userForm.name.$error">
+        <div ng-message="required" class="alert alert-danger">
+            Por favor, preencha o campo nome!
+        </div>
+    </div>
+    <div ng-show="userForm.email.$error.required && userForm.email.$dirty" class="alert alert-danger">
+        Por favor, preencha o campo E-mail!
+    </div>
+    <div ng-show="userForm.phone.$error.required && userForm.phone.$dirty" class="alert alert-danger">
+        Por favor, preencha o campo telefone!
+    </div>
+    <div ng-show="contatoForm.telefone.$error.pattern" class="alert alert-danger">
+        O campo telefone deve ter o formato DDDDD-DDDD.
+    </div>
+    <div ng-show="invalidEmail" class="alert alert-danger">
+        O e-mail não é válido
+    </div>
+    <button class="btn btn-primary btn-block" ng-click="saveUser(user)" ng-disabled="userForm.$invalid">{{newUser ? 'Adicionar Usuario' : 'Atualizar Usuario'}}</button>
+    <div class="col-lg-12 text-center">
+        <a href="#/">voltar</a>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="title">Listagem de usuários</div>
+    </div>
+</div>
+
+<div class="row">
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Sexo</th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="user in users">
+            <td>{{user.id}}</td>
+            <td><a href="#/user/{{user.id}}">{{user.name}}</a></td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.gender}}</td>
+            <td>
+                <button type="submit" class="btn btn-warning btn-xs" placeholder="U" ng-click="updateUser(user.id)">U</button>
+                <button type="submit" class="btn btn-danger btn-xs" placeholder="D" ng-click="deleteUser(user.id)">D</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 text-center">
+        <a href="#/user/add">Criar novo Usuário?</a>
+    </div>
+</div>
