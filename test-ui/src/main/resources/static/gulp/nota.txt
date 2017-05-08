@@ -1,0 +1,86 @@
+var gulp = require("gulp");
+var watch = require("gulp-watch");
+
+var concat = require("gulp-concat");
+var rename = require("gulp-rename");
+var uglify = require("gulp-uglify");
+var del = require("del");
+var minifyCSS = require("gulp-minify-css");
+var copy = require("gulp-copy");
+var bower = require("gulp-bower");
+var sourcemaps = require("gulp-sourcemaps");
+
+var path = {
+    src: "bower_components/",
+    lib: "lib/"
+}
+
+var config = {
+    jquerysrc: [
+        path.src + "jquery/dist/jquery.js",
+        path.src + "jquery-validation/dist/jquery.validate.js",
+        path.src + "jquery-validation/dist/jquery.validate.unobtrusive.js"
+    ],
+    jquerybundle: path.lib + "jquery-bundle.js",
+    ngsrc: [
+        path.src + "angular/angular.js",
+         path.src + "angular-route/angular-route.js",
+         path.src + "angular-resource/angular-resource.js"
+    ],
+    ngbundle: path.lib + "ng-bundle.js",
+
+    //JavaScript files that will be combined into a Bootstrap bundle
+    bootstrapsrc: [
+        path.src + "bootstrap/dist/js/bootstrap.js"
+    ],
+    bootstrapbundle: path.lib + "bootstrap-bundle.js"
+}
+
+// Synchronously delete the output script file(s)
+gulp.task("clean-scripts", function (cb) {
+    del(["lib","dist"], cb);
+});
+
+//Create a jquery bundled file
+gulp.task("jquery-bundle", ["clean-scripts", "bower-restore"], function () {
+    return gulp.src(config.jquerysrc)
+     .pipe(concat("jquery-bundle.js"))
+     .pipe(gulp.dest("lib"));
+});
+
+//Create a angular bundled file
+gulp.task("ng-bundle", ["clean-scripts", "bower-restore"], function () {
+    return gulp.src(config.ngsrc)
+     .pipe(concat("ng-bundle.js"))
+     .pipe(gulp.dest("lib"));
+});
+
+//Create a bootstrap bundled file
+gulp.task("bootstrap-bundle", ["clean-scripts", "bower-restore"], function     () {
+    return gulp.src(config.bootstrapsrc)
+     .pipe(concat("bootstrap-bundle.js"))
+     .pipe(gulp.dest("lib"));
+});
+
+
+// Combine and the vendor files from bower into bundles (output to the Scripts folder)
+gulp.task("bundle-scripts", ["jquery-bundle", "ng-bundle", "bootstrap-bundle"], function () {
+
+});
+
+//Restore all bower packages
+gulp.task("bower-restore", function () {
+    return bower();
+});
+
+//build lib scripts
+gulp.task("compile-lib", ["bundle-scripts"], function () {
+    return gulp.src("lib/*.js")
+        .pipe(sourcemaps.init())
+        .pipe(concat("compiled-bundle.js"))
+        .pipe(gulp.dest("dist"))
+        .pipe(rename("compiled-bundle.min.js"))
+        .pipe(uglify())
+        .pipe(sourcemaps.write("./"))
+        .pipe(gulp.dest("dist"));
+});

@@ -1,33 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR" ng-app="test">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta charset="UTF-8">
+        <title>Test Full Stack</title>
+        <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/app.css" />
+    </head>
+    <body>
+        <div ui-view></div>
+        <script src="/vendors/jquery/jquery-3.1.1.min.js"></script>
+        <script src="/vendors/bootstrap/bootstrap.min.js"></script>
+        <script src="/vendors/angular/angular.min.js"></script>
+        <script src="/vendors/angular/angular-ui-router.min.js"></script>
 
-<head>
-
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<meta charset="UTF-8">
-
-<title>Test Full Stack</title>
-
-<link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/app.css" />
-
-</head>
-
-<body>
-
-	<div ui-view></div>
-
-	<script src="/vendors/jquery/jquery-3.1.1.min.js"></script>
-	<script src="/vendors/bootstrap/bootstrap.min.js"></script>
-	<script src="/vendors/angular/angular.min.js"></script>
-	<script src="/vendors/angular/angular-ui-router.min.js"></script>
-
-	<script src="/app/app.js"></script>
-	<script src="/app/app-controller.js"></script>
-	<script src="/app/app-route.js"></script>
-
-</body>
+        <script src="/app/app.js"></script>        
+        <script src="/app/app-route.js"></script>
+        
+        <script src="/app/controllers/userController.js"></script>        
+        <script src="/app/controllers/userAddController.js"></script>
+        <script src="/app/controllers/getUserController.js"></script>
+    </body>
 
 </html>
