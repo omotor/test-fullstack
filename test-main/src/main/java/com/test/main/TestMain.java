@@ -10,17 +10,15 @@ import org.springframework.context.annotation.ComponentScan;
 
 /**
  * Start da aplicação
+ *
  * @author esdrastavares
  *
  */
 @SpringBootApplication
-@ComponentScan({
-	"com.test.api"
-})
+@ComponentScan({"com.test.api"})
 public class TestMain {
-
-	public static void main(String[] args) {
-		SpringApplication.run(TestMain.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TestMain.class, args);
+    }
 
 }

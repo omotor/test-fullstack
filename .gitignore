@@ -32,3 +32,6 @@ node_modules
 # Idea project files
 .idea/
 *.iml
+/test-config/target/
+/test-ui/src/main/resources/static/app/nbproject/private/
+/test-ui/src/main/resources/static/nbproject/private/
