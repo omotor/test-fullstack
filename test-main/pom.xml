@@ -1,66 +1,104 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>test-main</artifactId>
-	<name>Test Full Stack Main</name>
-	<parent>
-		<groupId>com.test</groupId>
-		<artifactId>test</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-	</parent>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>test-main</artifactId>
+    <name>Test Full Stack Main</name>
+    <parent>
+        <groupId>com.test</groupId>
+        <artifactId>test</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 
-	<dependencies>
+    <dependencies>
 	
-		<!-- Test -->
-		<dependency>
-			<groupId>com.test</groupId>
-			<artifactId>test-ui</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
+        <!-- Test -->
+        <dependency>
+            <groupId>com.test</groupId>
+            <artifactId>test-ui</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 		
-		<dependency>
-			<groupId>com.test</groupId>
-			<artifactId>test-api</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-
-		<!-- Spring Framework -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+        <dependency>
+            <groupId>com.test</groupId>
+            <artifactId>test-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.test</groupId>
+            <artifactId>test-config</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.test</groupId>
+            <artifactId>test-service</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.test</groupId>
+            <artifactId>test-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        
+        <!-- Spring Framework -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-undertow</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
 		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-devtools</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        
+        <!--HikariCP-->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+        <!--DB em memoria-->
+        <!--        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>-->
 
-	</dependencies>
 
-	<build>
+    </dependencies>
 
-		<finalName>${project.artifactId}</finalName>
+    <build>
 
-		<plugins>
+        <finalName>${project.artifactId}</finalName>
 
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+        <plugins>
 
-		</plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
 
-	</build>
+        </plugins>
+
+    </build>
 
 </project>

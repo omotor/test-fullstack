@@ -1,33 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR" ng-app="test">
 
-<head>
+    <head>
 
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta charset="UTF-8">
+        <meta charset="UTF-8">
 
-<title>Test Full Stack</title>
+        <title>Test Full Stack</title>
 
-<link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/app.css" />
+        <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/app.min.css" />
 
-</head>
+    </head>
 
-<body>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Test Full Stack</a>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#/user/">Listar</a></li>
+                        <li><a href="#/user/add">Cadastrar</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+        <div ui-view></div>
+        <div class="container">
+            <hr>
+            <footer><p>© 2016 Company, Inc.</p></footer>
+        </div>
 
-	<div ui-view></div>
+        <script src="/vendors/jquery/jquery-3.1.1.min.js"></script>
+        <script src="/vendors/bootstrap/bootstrap.min.js"></script>
+        <script src="/vendors/angular/angular.min.js"></script>
+        <script src="/vendors/angular/angular-ui-router.min.js"></script>
+        <script src="/vendors/angular/angular-resource.min.js"></script>
 
-	<script src="/vendors/jquery/jquery-3.1.1.min.js"></script>
-	<script src="/vendors/bootstrap/bootstrap.min.js"></script>
-	<script src="/vendors/angular/angular.min.js"></script>
-	<script src="/vendors/angular/angular-ui-router.min.js"></script>
+        <script src="/app/app.js"></script>
+        <script src="/app/services/app-api-service.js"></script>
+        <script src="/app/directives/form-directive.js"></script>
+        
+        <script src="/app/app-controller.js"></script>
+        <script src="/app/app-route.js"></script>
+        <script src="/app/controllers/app-listar-controller.js"></script>
+        <script src="/app/controllers/app-cadastrar-controller.js"></script>
+        <script src="/app/controllers/app-alterar-controller.js"></script>
+        <script src="/app/controllers/app-remover-controller.js"></script>
 
-	<script src="/app/app.js"></script>
-	<script src="/app/app-controller.js"></script>
-	<script src="/app/app-route.js"></script>
-
-</body>
+    </body>
 
 </html>

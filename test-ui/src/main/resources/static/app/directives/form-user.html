@@ -1,0 +1,27 @@
+<div class="form-group col-md-4">
+    <label for="nomeCompleto">Nome:</label>
+    <input type="text" ng-model="user.nome" id="nomeCompleto" maxlength="80" required value="" class="form-control input-round" ng-disabled="(tipoCliente.option === 'pessoaJuridica')"/>
+</div>
+<div class="form-group col-md-4">
+    <label for="genero">Sexo:</label>
+    <select ng-model="user.sexo" id="genero" class="form-control input-round" ng-disabled="(tipoCliente.option === 'pessoaJuridica')">
+        <option value="">Selecione</option>
+        <option value="FEMININO">Feminino</option>
+        <option value="MASCULINO">Masculino</option>
+    </select>
+</div>
+<div class="form-group col-md-4">
+    <label for="email">Email:</label>
+    <input type="email" ng-model="user.email" id="email" maxlength="80" value="" class="form-control input-round" />
+</div>
+<div class="form-group col-md-4">
+    <label for="telefone1">Telefone:</label>
+    <input type="text" ng-model="user.telefone" id="telefone1" minlength="14" maxlength="15" required value="" class="form-control mask-tel input-round"/>
+</div>
+<div class="form-group col-md-4">
+    <br/>
+    <a href="javascript:history.back()" class="btn btn-warning btn-round" >Voltar</a>
+    <button type="submit" name="enviar" class="btn btn-info input-round">
+        {{ submit}} 
+    </button>
+</div>

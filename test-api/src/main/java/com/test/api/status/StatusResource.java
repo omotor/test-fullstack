@@ -22,17 +22,17 @@ import com.test.model.api.response.StatusReponse;
 @RestController
 @RequestMapping(value = "/api/status", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class StatusResource {
-	
-	private final static Logger LOGGER = LoggerFactory.getLogger(StatusResource.class);
-	
+
+    private final static Logger LOGGER = LoggerFactory.getLogger(StatusResource.class);
+
 	/**
 	 * Retorna o status do server.
 	 * @return {@link StatusReponse}
 	 */
-	@GetMapping
-	public ResponseEntity<StatusReponse> status() {
-		LOGGER.debug("Status request.");
-		return ResponseEntity.ok().body(new StatusReponse());
-	}
+    @GetMapping
+    public ResponseEntity<StatusReponse> status() {
+        LOGGER.debug("Status request OK.");
+        return ResponseEntity.ok().body(new StatusReponse());
+    }
 
 }
