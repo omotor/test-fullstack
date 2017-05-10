@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR" ng-app="test">
-
 <head>
 
 <meta name="viewport"
@@ -16,18 +15,55 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" ui-sref="user">The Monico's Test</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a ui-sref="user">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-	<div ui-view></div>
+	<div id="title" align="center" style="margin-top: 50px;">
+		<p style="font-family:Courier New;color:gray">	
+&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&lhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&block;&block;&block;&block;&block;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&lhblk;&lhblk;&lhblk;&block;&block;&block;&lhblk;&lhblk;&lhblk;&lhblk;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&block;&block;&block;&block;&block;&block;&lhblk;&nbsp;&nbsp;&block;&block;&block;&lhblk;&lhblk;&lhblk;&lhblk;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&block;&nbsp;&nbsp;&nbsp;&lhblk;&block;&block;&block;&block;&block;&block;&block;&block;&nbsp;&nbsp;&lhblk;&block;&block;&block;&block;&block;&block;&lhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&block;&block;&block;&block;&block;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&block;&block;&block;&block;&block;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&block;&block;&block;&block;&block;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&uhblk;&block;&block;&block;&block;&block;&block;&block;&block;&block;&lhblk;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&block;&block;&uhblk;&uhblk;&uhblk;&block;&block;&block;&uhblk;&uhblk;&uhblk;&block;&block;&lhblk;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&uhblk;&uhblk;&uhblk;&block;&block;&lhblk;&nbsp;&block;&block;&block;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&uhblk;&block;&block;&block;&block;&block;&block;&block;&block;&block;&lhblk;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&uhblk;&block;&block;&block;&block;&block;&block;&block;&block;&block;&lhblk;&nbsp;
+&nbsp;&nbsp;&nbsp;&uhblk;&block;&block;&block;&uhblk;&uhblk;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&uhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&marker;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&uhblk;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&uhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&uhblk;&block;&block;&block;&uhblk;&uhblk;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&uhblk;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&uhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&uhblk;&block;&block;&block;&uhblk;&uhblk;&block;&block;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&uhblk;&nbsp;&nbsp;&lhblk;&block;&block;&block;&lhblk;&lhblk;&lhblk;&lhblk;&block;&block;&block;&lhblk;&lhblk;&nbsp;&nbsp;&lhblk;&block;&block;&block;&lhblk;&lhblk;&lhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&marker;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&uhblk;&nbsp;&nbsp;&lhblk;&block;&block;&block;&lhblk;&lhblk;&lhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&uhblk;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&uhblk;&uhblk;&block;&block;&block;&uhblk;&uhblk;&uhblk;&uhblk;&block;&block;&block;&uhblk;&nbsp;&nbsp;&uhblk;&uhblk;&block;&block;&block;&uhblk;&uhblk;&uhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&marker;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&uhblk;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&uhblk;&uhblk;&block;&block;&block;&uhblk;&uhblk;&uhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&uhblk;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&lhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&lhblk;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&lhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&lhblk;&block;&block;&block;&block;&uhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&block;&uhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&uhblk;&block;&nbsp;&nbsp;&nbsp;&block;&block;&block;&nbsp;&nbsp;&nbsp;&block;&uhblk;&nbsp;&nbsp;&nbsp;&uhblk;&block;&block;&block;&block;&block;&block;&uhblk;&nbsp;&nbsp;&nbsp;&uhblk;&block;&nbsp;&nbsp;&nbsp;&block;&uhblk;&nbsp;&nbsp;&block;&uhblk;&nbsp;&nbsp;&nbsp;&block;&block;&block;&block;&block;&block;&block;&block;&uhblk;&nbsp;&nbsp;&nbsp;&uhblk;&block;&block;&block;&block;&block;&block;&uhblk;&nbsp;&nbsp;&nbsp;&lhblk;&block;&block;&block;&block;&block;&block;&block;&block;&uhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&block;&block;&block;&block;&uhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&block;&block;&block;&block;&block;&block;&block;&block;&block;&block;&nbsp;&nbsp;&lhblk;&block;&block;&block;&block;&block;&block;&block;&block;&uhblk;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lhblk;&block;&block;&block;&block;&uhblk;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</p>
+	</div>
+
+    <div class="container">
+      <div class="row top-buffer">
+        <div class="col-xs-8 col-xs-offset-2">
+          <div ui-view></div> <!-- This is where our views will load -->
+        </div>
+      </div>
+    </div>
 
 	<script src="/vendors/jquery/jquery-3.1.1.min.js"></script>
 	<script src="/vendors/bootstrap/bootstrap.min.js"></script>
 	<script src="/vendors/angular/angular.min.js"></script>
+	<script src="/vendors/angular/angular-resource.min.js"></script>
 	<script src="/vendors/angular/angular-ui-router.min.js"></script>
 
 	<script src="/app/app.js"></script>
-	<script src="/app/app-controller.js"></script>
 	<script src="/app/app-route.js"></script>
-
+	<script src="/app/services/services.js"></script>
+	<script src="/app/controllers/main.js"></script>
+	<script src="/app/controllers/userlist.js"></script>
+	<script src="/app/controllers/userdelete.js"></script>
+	<script src="/app/controllers/useredit.js"></script>
+	<script src="/app/controllers/useradd.js"></script>
 </body>
 
 </html>

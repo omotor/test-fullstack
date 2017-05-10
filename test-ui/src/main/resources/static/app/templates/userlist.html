@@ -1,0 +1,23 @@
+<h1>Lista de usuários</h1>
+<br/>
+<table class="table movietable">
+	<tr>
+		<th>ID</th>
+		<th>Nome</th>
+		<th>Email</th>
+		<th>Telefone</th>
+		<th>Sexo</th>
+		<th colspan="2" style="text-align:center"><a ui-sref="useradd" class="btn-primary btn-lg nodecoration">Novo</a></th>
+	</tr>
+	<tr ng-repeat="user in users">
+		<td><b>{{user.id}}</b></td>
+		<td>{{user.nome}}</td>
+		<td>{{user.email}}</td>
+		<td>{{user.telefone}}</td>
+		<td>{{user.sexo}}</td>
+		<td><a class="btn btn-primary" ui-sref="useredit({id:user.id})">Editar</a></td>
+		<td><a class="btn btn-danger" ng-click="deleteUser(user)">Excluir</a></td>
+	</tr>
+</table>
+<br/>
+<p><a href="#/home">&Hopf;&oopf;&mopf;&eopf;</a></p>

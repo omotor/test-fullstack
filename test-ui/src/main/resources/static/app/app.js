@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('test', ['ui.router'])
+angular.module('test', ['ui.router', 'test.services', 'ngResource'])
 
 .config(['$urlRouterProvider', '$stateProvider',
 	function ($urlRouterProvider, $stateProvider) {
