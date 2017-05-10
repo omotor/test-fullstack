@@ -10,14 +10,14 @@
 	</parent>
 
 	<dependencies>
-	
+
 		<!-- Test -->
 		<dependency>
 			<groupId>com.test</groupId>
 			<artifactId>test-ui</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.test</groupId>
 			<artifactId>test-api</artifactId>
@@ -27,25 +27,8 @@
 		<!-- Spring Framework -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework.boot</groupId>
-					<artifactId>spring-boot-starter-tomcat</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-undertow</artifactId>
-		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
-
 	</dependencies>
 
 	<build>
