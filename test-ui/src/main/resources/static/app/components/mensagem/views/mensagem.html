@@ -1,0 +1,28 @@
+<div data-ng-repeat="msg in messages | orderBy:'tickCount'"
+     data-ng-style="{'top':($index*55.5)+'px'}"
+     data-ng-class="'ng-msg-'+msg.type"
+     data-ng-mouseleave="setTimeout(msg)"
+     data-ng-mouseenter="cancelTimeout(msg)" class="ng-msg" role="alert" >
+
+    <button type="button" class="close" data-ng-click="remove(msg)"><span>&times;</span></button>
+    <p>
+        <span class="badge inform-badge" data-ng-if="msg.count > 1">{{msg.count}}</span>
+        {{msg.content}}
+        <a data-ng-show="msg.detail" class="btn btn-xs btn-default" data-ng-click="msg.detailShow = !msg.detailShow">
+            <span class="glyphicon glyphicon-search"></span>
+        </a>
+    </p>
+    <div ng-show="msg.detailShow">
+        <hr>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <h4><b>Código:</b> {{msg.code}}</h4>
+                <h4><b>Data:</b> {{msg.date}}</h4>
+
+                <div class="detail-message">
+                    {{msg.detail}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
