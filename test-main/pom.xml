@@ -23,7 +23,7 @@
 			<artifactId>test-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
+		
 		<!-- Spring Framework -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -46,6 +46,11 @@
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>com.test</groupId>
+			<artifactId>test-config</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
