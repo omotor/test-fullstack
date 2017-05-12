@@ -1,0 +1,25 @@
+<div class="content-header">
+    <h1>Novo Cliente</h1>
+</div>
+
+<div class="content-main">
+    <div class="uibox">
+        <div class="uibox-heading">
+            <div class="uibox-tools">
+            </div>
+        </div>
+        <form name="userForm" novalidate role="userCtrl.form">
+            <div class="uibox-body">
+                <div ng-include="'/app/views/user-form.html'"></div>
+            </div>
+            <div class="uibox-footer">
+                <button class="btn btn-sm btn-primary" validation-submit="userForm" ng-click="userCtrl.form.submit()">
+                    <span aria-hidden="true"></span> Salvar
+                </button>
+                <a ui-sref="users-list" class="btn btn-sm btn-default">
+                    <span  aria-hidden="true"></span> Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
