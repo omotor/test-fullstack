@@ -1,0 +1,125 @@
+.header{
+}
+
+.content {
+	padding: 5px;
+	margin-bottom: 20px;
+}
+
+.content-main {
+	padding: 15px;
+}
+
+.content-header {
+	padding: 0 15px 10px;
+	background-color: #ffffff;
+	padding: 15px;
+}
+
+.content-header>h1 {
+	color: #666;
+	display: inline-block;
+	font-size: 24px;
+	font-weight: 300;
+	letter-spacing: -2px;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+}
+
+.content-header .btn-tools {
+	float: right;
+	position: relative;
+}
+
+/* ------------------------------------- */
+/* Message                                 */
+/* ------------------------------------- */
+.ng-msg {
+    z-index: 10000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 50px;
+    padding: 15px;
+    border: 1px solid transparent;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all .4s ease-in-out;
+}
+
+
+.ng-msg h4 {
+    margin-top: 0;
+    color: inherit
+}
+
+.ng-msg .alert-link {
+    font-weight: 700
+}
+
+.ng-msg>p,.ng-msg>ul {
+    margin-bottom: 0
+}
+
+.ng-msg>p+p {
+    margin-top: 5px
+}
+
+.ng-msg .alert-dismissable, .ng-msg .alert-dismissible {
+    padding-right: 35px
+}
+
+.ng-msg .alert-dismissable .close, .ng-msg .alert-dismissible .close {
+    position: relative;
+    top: -2px;
+    right: -21px;
+    color: inherit
+}
+
+.ng-msg .close{
+    color: #000000;
+}
+
+.ng-msg-danger{
+    color: white;
+    background-color: #dd514c;
+}
+.ng-msg-success{
+    color: white;
+    background-color: #5eb95e;
+}
+.ng-msg-info{
+    color: white;
+    background-color: #0e90d2;
+}
+.ng-msg-warning{
+    color: white;
+    background-color: #f37b1d;
+}
+
+.message-fixed-top {
+    position: fixed;
+    top: 50px;
+    right: 0;
+    z-index: 100;
+    border-radius: 0;
+    width: 100%;
+    padding-left: 235px;
+    transition: .4s all;
+}
+
+.expand-msg {
+    padding-left: 15px;
+    transition: .4s all;
+}
+
+.detail-message {
+    width: 100%;
+    height: 100px;
+    overflow: auto;
+    background-color: white;
+    border: 1px solid #cccccc;
+    padding: 10px;
+    color: #333333;
+}

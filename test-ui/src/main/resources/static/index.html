@@ -16,18 +16,60 @@
 </head>
 
 <body>
+<div data-mensagem></div>
 
-	<div ui-view></div>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Test Full Stack</a>
+			</div>
+
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li><a ui-sref="users-list">Clientes</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<div id="content" class="content">
+        <noscript>
+            <div class="alert alert-warning">A aplicação necessita que o JavaScript esteja habilitado.</div>
+        </noscript>
+
+        <div ui-view></div>
+    </div>
+
 
 	<script src="/vendors/jquery/jquery-3.1.1.min.js"></script>
 	<script src="/vendors/bootstrap/bootstrap.min.js"></script>
 	<script src="/vendors/angular/angular.min.js"></script>
 	<script src="/vendors/angular/angular-ui-router.min.js"></script>
+	
+	<script src="/node_modules/angular-resource/angular-resource.js"></script>
 
 	<script src="/app/app.js"></script>
 	<script src="/app/app-controller.js"></script>
 	<script src="/app/app-route.js"></script>
 
+	<script src="/app/controllers/UserController.js"></script>
+	<script src="/app/services/UserService.js"></script>
+	
+	<script src="/app/directives/directives.js"></script>
+	
+	<script type="text/javascript" src="app/components/mensagem/dist/mensagem.js"></script>
+	<script type="text/javascript" src="app/components/validation/dist/angular-validation.js"></script>
+	<script type="text/javascript" src="app/components/validation/dist/angular-validation-rule.js"></script>
+	<script type="text/javascript" src="app/components/mensagem/dist/mensagem.js"></script>
 </body>
 
 </html>
