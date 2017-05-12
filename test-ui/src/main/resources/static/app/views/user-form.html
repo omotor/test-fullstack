@@ -33,7 +33,7 @@
     <div class="col-md-3 col-sm-3">
         <div class="form-group">
             <label class="required">Telefone</label>
-            <input id="phone" name="phone" type="text" class="form-control" validator="required, length"  placeholder="Preencha o telefone do Cliente"
+            <input id="phone" name="phone" type="text" class="form-control" validator="required, length,number"  placeholder="Preencha o telefone do Cliente" phone="userCtrl.user.phone"
                    ng-model="userCtrl.user.phone" valid-method="submit-only" message-id="requiredPhone" ng-minlength="8" maxlength="12"/>
             <span id="requiredPhone" class="help-block"></span>
         </div>
