@@ -1,4 +1,4 @@
-package com.test.main;
+package com.test.conf;
 
 import java.util.Properties;
 

@@ -9,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
+import com.test.conf.JpaConfiguration;
+
 /**
  * Start da aplicação
  * @author esdrastavares
