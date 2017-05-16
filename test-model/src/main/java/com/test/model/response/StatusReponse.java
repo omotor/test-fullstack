@@ -2,7 +2,7 @@
  * Product: OMotor
  * Copyright (C) 2017 OMotor. All Rights Reserved.
  */
-package com.test.model.api.response;
+package com.test.model.response;
 
 import java.io.Serializable;
 
