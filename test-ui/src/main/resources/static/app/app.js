@@ -1,15 +1,26 @@
-'use strict';
+(function () {
 
-angular.module('test', ['ui.router'])
+	'use strict';
 
-.config(['$urlRouterProvider', '$stateProvider',
-	function ($urlRouterProvider, $stateProvider) {
+	angular.module('test', [
+		'ui.router',
+		'ngResource',
+		'angular-ladda',
+		'ui.utils.masks',
+		'idf.br-filters',
+		'angular-growl'
+	])
 
-	$urlRouterProvider.otherwise('/home');
+	.config(['$urlRouterProvider', '$stateProvider',
+		function ($urlRouterProvider, $stateProvider) {
 
-}])
+		$urlRouterProvider.otherwise('/user/');
 
-.run(['$rootScope', '$state',
-	function ($rootScope, $state) {
+	}])
 
-}]);
+	.run(['$rootScope', '$state',
+		function ($rootScope, $state) {
+
+	}]);
+
+})();
