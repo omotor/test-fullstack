@@ -3,6 +3,6 @@ const requireDir = require('require-dir');
 
 requireDir('./tasks');
 
-gulp.task('default', ['browser-sync'], function () {
-    
+gulp.task('default', ['minify-js', 'minify-css'], function () {
+
 });

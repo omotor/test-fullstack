@@ -1,1 +1,0 @@
-Todos os interceptors da aplicação

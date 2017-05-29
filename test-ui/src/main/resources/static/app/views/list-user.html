@@ -1,0 +1,58 @@
+<br/>
+
+<div class="panel panel-default"  ng-controller="UserController as ctrl">
+    <div class="panel-heading">
+
+        <h3 class="panel-title pull-left">
+            Users
+        </h3>
+
+        <a class="btn btn-default pull-right" ui-sref="user-add">
+            <span class="glyphicon glyphicon-plus"></span> Novo
+        </a>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+
+    <div class="panel-body">
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Sex</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in ctrl.userList">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone | brPhoneNumber}}</td>
+                <td>{{user.sex}}</td>
+                <td>
+
+                    <div class="btn-group" role="group" aria-label="...">
+                        <a class="btn btn-warning" role="button" ui-sref="user-edit({id:user.id})">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </a>
+                        <a class="btn btn-danger" role="button" ng-click="ctrl.remove(user, $index)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                    </div>
+
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

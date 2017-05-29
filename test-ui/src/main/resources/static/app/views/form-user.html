@@ -1,0 +1,62 @@
+<br/>
+
+<div class="panel panel-default"  ng-controller="UserFormController as ctrl">
+    <div class="panel-heading">
+
+        <h3 class="panel-title pull-left">
+            User
+        </h3>
+
+        <a class="btn btn-default pull-right" ui-sref="user-list">
+            <span class="glyphicon glyphicon-arrow-left"></span> Voltar
+        </a>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+
+    <div class="panel-body">
+
+        <form role="form" ng-submit="ctrl.save()">
+            <input type="hidden" class="form-control" ng-model="cargoCtrl.cargo.id" id="id">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input ng-minlength="4" type="text" required class="form-control" ng-model="ctrl.user.name" id="name" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input ng-minlength="4" type="email" required class="form-control" ng-model="ctrl.user.email" id="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input ui-br-phone-number type="text" required class="form-control" ng-model="ctrl.user.phone" id="phone" placeholder="Phone">
+            </div>
+
+
+            <div class="form-group">
+                <label>Sex</label>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="ctrl.user.sex" checked value="M">
+                        Male
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" ng-model="ctrl.user.sex" value="F">
+                        Female
+                    </label>
+                </div>
+            </div>
+
+            <button ladda="ctrl.saveOrUpdate" data-style="expand-right" type="submit" class="btn btn-primary">
+                <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
+                Save
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
