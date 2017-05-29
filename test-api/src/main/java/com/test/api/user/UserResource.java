@@ -35,13 +35,8 @@ public class UserResource {
 
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable(name = "id")  Long id, @RequestBody User user) {
-        User userUpdate = this.userService.get(id);
-        userUpdate.setName(user.getName());
-        userUpdate.setEmail(user.getEmail());
-        userUpdate.setPhone(user.getPhone());
-        userUpdate.setSex(user.getSex());
-        this.userService.saveOrUpdate(userUpdate);
-        return ResponseEntity.ok(userUpdate);
+        this.userService.update(id, user);
+        return ResponseEntity.ok(user);
     }
 
     @DeleteMapping("/{id}")
