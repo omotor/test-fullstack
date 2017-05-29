@@ -10,23 +10,40 @@
 
 <title>Test Full Stack</title>
 
-<link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="/css/app.css" />
+<link rel="stylesheet" href="/dist/css/app.min.css"/>
+<link rel="stylesheet" href="/dist/css/vendors.min.css">
 
 </head>
 
 <body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Test Full Stack</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Test Full Stack</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Users</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-	<div ui-view></div>
+	<br/>
+	<br/>
+	<br/>
 
-	<script src="/vendors/jquery/jquery-3.1.1.min.js"></script>
-	<script src="/vendors/bootstrap/bootstrap.min.js"></script>
-	<script src="/vendors/angular/angular.min.js"></script>
-	<script src="/vendors/angular/angular-ui-router.min.js"></script>
+	<div growl></div>
+	<div ui-view class="container"></div>
 
-	<script src="/app/app.js"></script>
-	<script src="/app/app-controller.js"></script>
-	<script src="/app/app-route.js"></script>
+	<script src="/dist/js/vendors.min.js"></script>
+	<script src="/dist/js/app.min.js"></script>
 
 </body>
 
