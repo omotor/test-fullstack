@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Primary;
 import com.zaxxer.hikari.HikariDataSource;
 
 @Configuration
-//@EnableTransactionManagement
 public class DataSourceConfiguration 
 {
     @Value("${testconfig.datasource.maxPoolSize}")
