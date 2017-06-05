@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.*;
 
-@Entity(name = "user")
+@Entity(name = "User")
 public class User implements Serializable {
 	public enum SEX {
       MALE, FEMALE, OTHER
@@ -23,19 +23,27 @@ public class User implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="user_id")
 	private Long id;
-	
-	@NotNull
-	@Column(name="user_name")
+
+	@Column(name="user_name", nullable = false)
+	@NotNull(message = "validation.user.name.NotEmpty")
+	@Size(min=1, message = "validation.user.name.NotEmpty")
 	private String name;
 	
-	@Column(name="user_email")
+	@Column(name="user_email", nullable = false)
+	@NotNull(message = "validation.user.email.NotEmpty")
+	@Size(min=1,message = "validation.user.email.NotEmpty")
+	@Pattern(regexp = "^[\\w-]+(\\.[\\w-]+)*@([a-z0-9-]+(\\.[a-z0-9-]+)*?\\.[a-z]{2,6}|(\\d{1,3}\\.){3}\\d{1,3})(:\\d{4})?$",
+		message = "validation.user.email.Pattern")
 	private String email;
 	
-	@Column(name="user_telephone")
+	@Column(name="user_telephone", nullable = false)
+	@NotNull(message = "validation.user.telephone.NotEmpty")
+	@Size(min=1, message = "validation.user.telephone.NotEmpty")
 	private String telephone;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name="user_sex")
+	@Column(name="user_sex", nullable = false)
+	@NotNull(message = "validation.user.sex.NotEmpty")
 	private SEX sex;
 
 	public Long getId() {
