@@ -1,10 +1,15 @@
 package com.test.service;
 
+import java.util.Collection;
+import java.util.Optional;
+
+
 import com.test.model.api.response.User;
 
 public interface UserService {
-	User findById(Long userId);
-	Iterable<User> findAll();
-	User save(User user);
+	Optional<User> findById(Long userId);
+	Collection<User> findAll();
+	Optional<User> create(User user);
+	Optional<User> update(Long userId, User user);
 	void deleteById(Long userId);
 }

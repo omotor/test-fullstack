@@ -1,6 +1,7 @@
 package com.test.api.user;
 
-import java.net.URI;
+import java.util.Collection;
+import java.util.Optional;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -16,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.MessageSource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -35,20 +35,21 @@ public class UserResource {
 	UserService userService;
 	
 	@Inject
+	//To handle response when there are validation fields errors
 	ErrorValidationHandler errorValidationHandler;
 	
 	@GetMapping(value = "/{userId}")
 	public ResponseEntity<?> getUserById(@PathVariable Long userId) {
 		LOGGER.debug("User GET request.");
 		
-		User user = this.userService.findById(userId);
-		return ResponseEntity.ok().body(user);
+		Optional<User> user = this.userService.findById(userId);
+		return user.isPresent() ? ResponseEntity.ok().body(user.get()) : ResponseEntity.notFound().build();
 	}
 	
 	@GetMapping
 	public ResponseEntity<Iterable<User>> getUsers() {
 		LOGGER.debug("Users GET request.");
-		Iterable<User> users = this.userService.findAll();
+		Collection<User> users = this.userService.findAll();
 		return ResponseEntity.ok().body(users);
 	}
 	
@@ -58,27 +59,28 @@ public class UserResource {
 		if(validationErrors.hasErrors())
 			return this.errorValidationHandler.getApiErrorResponse(validationErrors, HttpStatus.BAD_REQUEST);
 			
-		//LOGGER.debug(this.messageSource.getMessage("validation.user.email.Pattern", null, Locale.US));
-		User createdUser = this.userService.save(newUser);
-		URI location = ServletUriComponentsBuilder
-				.fromCurrentRequest().path("/{id}")
-				.buildAndExpand(createdUser.getId()).toUri();
-		return ResponseEntity.created(location).build();
+		Optional<User> createdUser = this.userService.create(newUser);
+		
+		return !createdUser.isPresent() ? ResponseEntity.noContent().build() :
+					ResponseEntity.created(ServletUriComponentsBuilder
+						.fromCurrentRequest().path("/{id}")
+						.buildAndExpand(createdUser.get().getId())
+						.toUri()).build();
 	}
 	
-	@PutMapping
-	public ResponseEntity<?> updateUser(@Valid @RequestBody User user, Errors validationErrors) {
-		LOGGER.debug("User POST request.");
+	@PutMapping("/{userId}")
+	public ResponseEntity<?> updateUser(@PathVariable Long userId, @Valid @RequestBody User user, Errors validationErrors) {
+		LOGGER.debug("User PUT request.");
 		if(validationErrors.hasErrors())
 			return this.errorValidationHandler.getApiErrorResponse(validationErrors, HttpStatus.BAD_REQUEST);
 		
-		User userUpdated = this.userService.save(user);
-		return ResponseEntity.ok().body(userUpdated);
+		Optional<User> userUpdated = this.userService.update(userId, user);
+		return userUpdated.isPresent() ? ResponseEntity.ok().body(userUpdated) : ResponseEntity.notFound().build() ;
 	}
 	
 	
 	
-	@DeleteMapping(value = "/{userId}")
+	@DeleteMapping("/{userId}")
 	public ResponseEntity<?> deleteUserById(@PathVariable Long userId) {
 		LOGGER.debug("User DELETE request.");
 		
