@@ -14,13 +14,10 @@ import org.springframework.context.annotation.ComponentScan;
  *
  */
 @SpringBootApplication
-@ComponentScan({
-	"com.test.api"
-})
+@ComponentScan(basePackages = {"com.test.config", "com.test.api", "com.test.main",  "com.test.model","com.test.repository", "com.test.service"}) 
 public class TestMain {
 
 	public static void main(String[] args) {
 		SpringApplication.run(TestMain.class, args);
 	}
-
 }

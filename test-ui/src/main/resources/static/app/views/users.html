@@ -1,0 +1,54 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+
+        <h3 class="panel-title pull-left">
+            Users
+        </h3>
+
+        <a class="btn btn-primary pull-right" ui-sref="user-add">
+            <span class=""></span> + Add
+        </a>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+
+    <div class="panel-body">
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Telephone</th>
+                <th>Sex</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="user in vm.users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.telephone}}</td>
+                <td>{{user.sex}}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="...">
+                        <a class="btn btn-warning" role="button" ui-sref="user-edit({id:user.id})">
+                            <span>Edit</span>
+                        </a>
+                        <a class="btn btn-danger" role="button" ng-click="vm.remove( {id:user.id} , $index)">
+                            <span>Remove</span>
+                        </a>
+                    </div>
+
+                </td>
+
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div> 
